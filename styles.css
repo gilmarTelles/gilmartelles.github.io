@@ -82,6 +82,15 @@ a:hover {
 .tagline {
     font-size: 1rem;
     color: #8b949e;
+    margin-bottom: 0.75rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #6e7681;
     margin-bottom: 1.5rem;
 }
 
@@ -93,6 +102,29 @@ a:hover {
 
 .social-links a {
     font-weight: 500;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px 0;
+    border-bottom: 1px solid #21262d;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-category h3 {
+    font-size: 1rem;
+    color: #58a6ff;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category p {
+    font-size: 0.9rem;
+    color: #8b949e;
 }
 
 /* Experience Section */
@@ -133,6 +165,25 @@ a:hover {
     left: 0;
     color: #58a6ff;
     font-weight: 600;
+}
+
+/* Education Section */
+.education {
+    padding: 60px 0;
+    border-bottom: 1px solid #21262d;
+}
+
+.degree {
+    margin-bottom: 1.5rem;
+}
+
+.degree:last-child {
+    margin-bottom: 0;
+}
+
+.school {
+    color: #8b949e;
+    font-size: 1rem;
 }
 
 /* Contact Section */
@@ -184,9 +235,15 @@ footer p {
         height: 120px;
     }
 
+    .skills,
     .experience,
+    .education,
     .contact {
         padding: 40px 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     .social-links {
