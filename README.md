@@ -1,22 +1,33 @@
-# Data Scientist
+# gilmartelles.github.io
 
-### Education
-Bachelor of Mechanical Engineering
+Personal portfolio website for Gilmar Telles, hosted on GitHub Pages.
 
-### Work Experience
-Business Intelligence Analyst @ ExxonMobil
+**Live site:** [gilmartelles.com](https://gilmartelles.com)
 
-- Discovered and optimized end-to-end business processes using Celonis EMS, uncovering inefficiencies in order-to-cash and procure-to-pay that improved process compliance by 20%.
-- Designed interactive dashboards and KPIs to monitor cycle times, bottlenecks, and rework, enabling leadership to act on real-time insights and accelerate decision-making.
-- Built execution apps and automation triggers in Celonis, eliminating repetitive manual tasks and proactively flagging SLA breaches, minimizing delays and operational risks.
-- Translated complex data findings into clear, actionable recommendations for senior stakeholders, driving measurable efficiency gains across global operations.
+## About
 
-Accounts Receivable Analyst @ ExxonMobil
+Senior Data Analyst & Product Owner with 5+ years of experience in data analysis, dashboard development, machine learning, and generative AI. Currently pursuing a Master's in Statistics and Data Science at Federal University of Paraná.
 
-- Managed $40M in receivables across 1,800 stakeholders, ensuring timely collections while streamlining dispute resolution through process automation.
-- Delivered 100+ hours of training in Python, Snowflake, and Power BI to global colleagues, fostering a culture of data-driven problem-solving and process optimization.
-- Designed and implemented ETL pipelines to automate repetitive workflows, eliminating 150+ manual hours per month and improving data reliability.
-- Revamped AR dashboards in Power BI, reducing data refresh times by 30+ hours monthly and enabling faster business insights.
-- Developed a machine learning model for payment allocation, cutting manual effort by 200+ hours per month and significantly improving accuracy in financial operations.
+## Tech Stack
 
-### Projects
+- Static HTML/CSS (no framework dependencies)
+- Dark mode design
+- Responsive layout
+- Hosted on GitHub Pages
+
+## Structure
+
+```
+├── index.html      # Main portfolio page
+├── styles.css      # Dark-mode styles
+├── images/
+│   └── headshot.png
+├── .nojekyll       # Bypasses Jekyll processing
+└── CNAME           # Custom domain config
+```
+
+## Contact
+
+- Email: tellesgilmar@gmail.com
+- LinkedIn: [linkedin.com/in/gilmartelles](https://linkedin.com/in/gilmartelles)
+- GitHub: [github.com/gilmarTelles](https://github.com/gilmarTelles)
