@@ -1,27 +1,41 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to coding agents when working in this repository.
 
-## Project Overview
+## Project overview
 
-Personal portfolio website for Gilmar Telles, hosted on GitHub Pages at gilmartelles.com. Uses Jekyll with the `jekyll-theme-minimal` theme.
+Personal portfolio website for Gilmar Telles, hosted on GitHub Pages at gilmartelles.com.
+
+The site is plain static HTML/CSS/JS. It does not use Jekyll or a build step.
 
 ## Development
 
-**Local preview:**
-```bash
-bundle install
-bundle exec jekyll serve
-```
-Then visit http://localhost:4000
+Local preview:
 
-**Deployment:** Push to `main` branch. GitHub Pages automatically builds and deploys.
+```bash
+python3 -m http.server 4173
+```
+
+Then visit http://localhost:4173.
+
+Deployment: push to the `main` branch. GitHub Pages deploys the static files directly.
 
 ## Architecture
 
-- `README.md` - Main content file; Jekyll converts this to the homepage
-- `_config.yml` - Jekyll configuration (title, logo, theme)
+- `index.html` - Main portfolio markup and page metadata
+- `styles.css` - Design system, responsive layout, light/dark themes
+- `theme.js` - Light/dark theme toggle with localStorage persistence
+- `lang.js` - EN/PT-BR translations and language toggle
+- `main.js` - Hamburger menu, tabs, scroll reveal, header state, scroll-spy
+- `images/` - Static assets, including `headshot.png`
+- `.nojekyll` - Bypasses Jekyll processing on GitHub Pages
+- `.impeccable.md` - Design context
 - `CNAME` - Custom domain configuration
-- `images/` - Static assets (headshot photo)
 
-The site relies entirely on GitHub Pages' built-in Jekyll processing. No local build artifacts are committed.
+## Conventions
+
+- Keep the site dependency-free unless explicitly approved.
+- When adding visible text, update both the HTML fallback text and `lang.js` translations.
+- Maintain keyboard accessibility for controls and links.
+- Preserve the bilingual EN/PT-BR experience and light/dark theme support.
+- Do not commit build artifacts.
