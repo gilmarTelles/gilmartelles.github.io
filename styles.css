@@ -209,6 +209,84 @@ p {
   margin-bottom: 0;
 }
 
+/* Project list: numbered, clean vertical layout */
+.project-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: project;
+}
+
+.project-list li {
+  counter-increment: project;
+  padding: 18px 0 18px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.project-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-list li:first-child {
+  padding-top: 0;
+}
+
+.project-list strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--green);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.project-list p {
+  color: #444;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Focus list: term + definition pairs */
+.focus-list {
+  margin: 0;
+  padding: 0;
+}
+
+.focus-list div {
+  padding: 12px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.focus-list div:first-child {
+  padding-top: 0;
+}
+
+.focus-list div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.focus-list dt {
+  font-weight: 650;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.focus-list dd {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .band {
   background: var(--band);
   border-top: 1px solid #e7e7e7;
@@ -220,38 +298,6 @@ p {
   max-width: var(--max);
   margin: 0 auto;
   padding: 42px 24px 46px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 14px;
-}
-
-.work-card {
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  padding: 16px;
-  min-height: 180px;
-}
-
-.work-card p:last-child {
-  margin-bottom: 0;
-}
-
-.meta {
-  color: var(--green);
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.link-list {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.link-list li {
-  margin: 8px 0;
 }
 
 .plain-columns {
@@ -334,10 +380,6 @@ p {
 
   .entry {
     grid-column: 2;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
   }
 
   .plain-columns {
