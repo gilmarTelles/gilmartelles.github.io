@@ -11,8 +11,8 @@
     'links.email': { en: 'email', pt: 'email' },
 
     'hero.tagline': {
-      en: 'Mechanical Engineer turned Data Scientist. Machine Learning. Artificial Intelligence. Making data products that get used by thousands.',
-      pt: 'Engenheiro Mecânico virou Cientista de Dados. Machine Learning. Inteligência Artificial. Fazendo produtos de dados que são usados por milhares.'
+      en: 'Mechanical Engineer by training, Data Scientist by passion. Machine Learning. Artificial Intelligence. Creating data products that impact thousands.',
+      pt: 'Engenheiro Mecânico de formação, Cientista de Dados por paixão. Machine Learning. Inteligência Artificial. Criando produtos de dados que impactam milhares.'
     },
 
     'timeline.heading': { en: 'timeline', pt: 'linha do tempo' },
