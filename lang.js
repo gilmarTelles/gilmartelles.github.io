@@ -11,8 +11,8 @@
     'links.email': { en: 'email', pt: 'email' },
 
     'hero.tagline': {
-      en: 'I build data and AI systems that turn messy operations into clear decisions, from LLM-powered assistants to working-capital dashboards.',
-      pt: 'Construo sistemas de dados e IA que transformam operações complexas em decisões claras, de assistentes com LLM a dashboards de capital de giro.'
+      en: 'Mechanical Engineer turned data scientist. Machine Learning. Artificial Intelligence. Making data products that get used by thousands.',
+      pt: 'Engenheiro Mecânico virou cientista de dados. Machine Learning. Inteligência Artificial. Fazendo produtos de dados que são usados por milhares.'
     },
 
     'timeline.heading': { en: 'timeline', pt: 'linha do tempo' },
