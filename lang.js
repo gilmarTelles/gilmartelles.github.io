@@ -25,7 +25,7 @@
       en: 'Building data products for a consulting company: full-stack LLM assistants with agent tools and knowledge graphs for process intelligence, OCR and forecasting pipelines, and BI dashboards used by 1,100+ people. Also built developer tooling including a Python TUI for content migration and automated backup infrastructure.',
       pt: 'Construindo produtos de dados para uma consultoria: assistentes LLM full-stack com ferramentas de agente e knowledge graphs para inteligência de processos, pipelines de OCR e previsão, e dashboards de BI usados por mais de 1.100 pessoas. Também construí ferramentas de desenvolvedor incluindo uma TUI em Python para migração de conteúdo e infraestrutura automatizada de backup.'
     },
-    'timeline.2.time': { en: '2022 - 2025', pt: '2022 - 2025' },
+    'timeline.2.time': { en: '2022 - present', pt: '2022 - presente' },
     'timeline.2.title': {
       en: 'Senior Data Analyst at ExxonMobil',
       pt: 'Analista de Dados Sênior na ExxonMobil'
