@@ -23,19 +23,27 @@ Deployment: push to the `main` branch. GitHub Pages deploys the static files dir
 ## Architecture
 
 - `index.html` - Main portfolio markup and page metadata
-- `styles.css` - Design system, responsive layout, light/dark themes
-- `theme.js` - Light/dark theme toggle with localStorage persistence
-- `lang.js` - EN/PT-BR translations and language toggle
-- `main.js` - Hamburger menu, tabs, scroll reveal, header state, scroll-spy
+- `styles.css` - Light academic design system, responsive layout
+- `lang.js` - EN/PT-BR translations and language toggle (all visible text is keyed here)
+- `main.js` - Minimal stub (no theme system)
 - `images/` - Static assets, including `headshot.png`
 - `.nojekyll` - Bypasses Jekyll processing on GitHub Pages
-- `.impeccable.md` - Design context
 - `CNAME` - Custom domain configuration
+
+## Content sections (index.html)
+
+1. Profile header (photo, name, tagline, links)
+2. Timeline (4 entries: senior DS, data analyst, masters, bachelors)
+3. Selected work (7 cards: ProcessOwl, Celonis AI, OCR, Working Capital, Payment Allocation, Celonis Migrator, Dengue)
+4. What I work on (6 items)
+5. Tools (4 columns)
+6. Contact
 
 ## Conventions
 
 - Keep the site dependency-free unless explicitly approved.
 - When adding visible text, update both the HTML fallback text and `lang.js` translations.
 - Maintain keyboard accessibility for controls and links.
-- Preserve the bilingual EN/PT-BR experience and light/dark theme support.
+- Preserve the bilingual EN/PT-BR experience.
 - Do not commit build artifacts.
+- The site is intentionally light-only (no theme toggle).
