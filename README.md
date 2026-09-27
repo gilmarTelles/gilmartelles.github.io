@@ -7,30 +7,31 @@ Personal portfolio website for Gilmar Telles, hosted on GitHub Pages.
 ## Architecture
 
 ```
-├── index.html      # Main portfolio (bilingual markup)
-├── styles.css      # Design system (OKLCH colors, light/dark themes)
-├── theme.js        # Theme toggle (light ↔ dark) + localStorage
-├── lang.js         # Language toggle (EN ↔ PT-BR) + localStorage
-├── main.js         # Tabs, hamburger menu, scroll reveal, header behavior
+├── index.html      # The whole site: one bilingual page
+├── styles.css      # Light-only design system, system font stack, responsive layout
+├── lang.js         # EN ↔ PT-BR toggle and translations, persisted via localStorage
+├── main.js         # Minimal stub for future enhancements
 ├── images/
 │   └── headshot.png
 ├── .nojekyll       # Bypasses Jekyll processing
-├── .impeccable.md  # Design context
 └── CNAME           # Custom domain config
 ```
 
 ## Features
 
-- **Bilingual**: EN / PT-BR toggle (single page, JS-based, persisted via localStorage)
-- **Dark/Light theme**: Toggle with system preference detection, persisted via localStorage
-- **Responsive**: Mobile-first with hamburger menu on small screens
-- **Sections**: Hero, About, Services, Skills, Projects, Experience (tabbed), Education, Contact
-- **Design**: Bricolage Grotesque + Libre Franklin typography, OKLCH color system, editorial layout
+- **Bilingual:** EN / PT-BR toggle, persisted via localStorage
+- **Light-only:** no theme toggle, by design
+- **Sections:** profile header, timeline, projects, what I work on, tools, contact
+- **No dependencies:** plain HTML, CSS, and JS with no build step
 
 ## Development
 
-Open `index.html` in a browser. No build tools required — pure HTML/CSS/JS.
+```bash
+python3 -m http.server 4173
+```
+
+Then visit http://localhost:4173.
 
 ## Deployment
 
-Push to `main` branch. GitHub Pages builds and deploys automatically.
+Push to `main`. GitHub Pages serves the files directly.
