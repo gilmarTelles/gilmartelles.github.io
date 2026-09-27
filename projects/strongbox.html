@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="sb.title">Strongbox | Gilmar Telles</title>
+  <meta name="description" content="Case study: Strongbox, an audit platform that runs accounting controls on SAP journal entries and proves the records were never altered.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Strongbox | Gilmar Telles">
+  <meta property="og:description" content="Case study: Strongbox, an audit platform that runs accounting controls on SAP journal entries and proves the records were never altered.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gilmartelles.com/projects/strongbox.html">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="i18n-loading">
+  <a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+
+  <main id="main" class="article">
+    <nav class="article-top" aria-label="Site">
+      <a href="/" data-i18n="article.back">← Gilmar Telles</a>
+      <div class="profile-links">
+        <button class="lang-link active" type="button" data-lang-btn="en">en</button>
+        <button class="lang-link" type="button" data-lang-btn="pt">pt</button>
+      </div>
+    </nav>
+
+    <header>
+      <h1 data-i18n="sb.h1">Strongbox</h1>
+      <p data-i18n="sb.lede" class="lede">An audit platform that checks SAP journal entries against accounting controls and proves the records it checked were never altered.</p>
+      <dl class="article-meta">
+        <div><dt data-i18n="meta.role">Role</dt><dd data-i18n="sb.meta.1">Designed and built end to end</dd></div>
+        <div><dt data-i18n="meta.when">When</dt><dd data-i18n="sb.meta.2">2026</dd></div>
+        <div><dt data-i18n="meta.stack">Stack</dt><dd data-i18n="sb.meta.3">Python, Flask, PostgreSQL, React, Docker</dd></div>
+        <div><dt data-i18n="meta.status">Status</dt><dd data-i18n="sb.meta.4">v0.1, validation stage</dd></div>
+      </dl>
+      <ul class="highlights">
+        <li><strong data-i18n="sb.hl.1.t">Tampering is caught</strong><span data-i18n="sb.hl.1.b">Changing one amount in the database makes the next check fail and name the exact batch.</span></li>
+        <li><strong data-i18n="sb.hl.2.t">Evidence to the document</strong><span data-i18n="sb.hl.2.b">Every finding links to the exact journal entries behind it, ready to download.</span></li>
+        <li><strong data-i18n="sb.hl.3.t">Mapped to real standards</strong><span data-i18n="sb.hl.3.b">Controls cite SOX, PCAOB, ISA, COSO and Brazil&#x27;s SPED.</span></li>
+      </ul>
+    </header>
+
+    <article>
+      <h2 data-i18n="sb.b1">Audit tests run on copies nobody can vouch for</h2>
+      <p data-i18n="sb.b2">Finance teams and auditors test journal entries for the same risks every close: the same person entering and approving an entry, postings dated in the past, large manual journals hitting sensitive accounts. The usual way is to export data from the ERP into spreadsheets and filter it by hand.</p>
+      <p data-i18n="sb.b3">Once the data leaves the ERP, nobody can prove the rows being tested are the rows that were posted. Every exception then has to be traced back to its documents by hand before anyone can act on it.</p>
+      <h2 data-i18n="sb.b4">Make every control result provable</h2>
+      <p data-i18n="sb.b5">I set out to build a product that runs these controls automatically on SAP data and backs every claim it makes. The data it checked has to be provably untouched, and every exception has to point to the exact records behind it.</p>
+      <h2 data-i18n="sb.b6">A fingerprint for every record, and evidence for every finding</h2>
+      <ul class="points">
+        <li data-i18n="sb.b7.1">Every accepted record gets a SHA-256 fingerprint, and the fingerprints are linked into a chain. Verification rebuilds the whole chain, so any change, deletion or reordering shows up.</li>
+        <li data-i18n="sb.b7.2">A library of 13 controls, each mapped to the audit standards it serves, with a remediation step and downloadable evidence down to the document number.</li>
+        <li data-i18n="sb.b7.3">Every report run is frozen with its exact inputs: dataset, control versions, settings, and the code and container that produced it. Any result can be reproduced later.</li>
+        <li data-i18n="sb.b7.4">Changes to controls and thresholds are versioned and need an independent approval before they go live, so no one can quietly loosen a check.</li>
+      </ul>
+      <figure>
+        <img src="/images/projects/strongbox/portal.jpg" alt="The customer workspace: the locked audit trail of hashed batches, test reports, and the chain-of-custody status." data-i18n-alt="sb.b8" loading="lazy" decoding="async">
+        <figcaption data-i18n="sb.b8">The customer workspace: the locked audit trail of hashed batches, test reports, and the chain-of-custody status.</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/projects/strongbox/findings.jpg" alt="A test report lists each failed control with the standards it maps to and the step to fix it." data-i18n-alt="sb.b9" loading="lazy" decoding="async">
+        <figcaption data-i18n="sb.b9">A test report lists each failed control with the standards it maps to and the step to fix it.</figcaption>
+      </figure>
+      <p data-i18n="sb.b10">I built it as a full-stack product: a Python and Flask API on PostgreSQL, a React and TypeScript front end, and Docker for deployment to a cloud server. Browser tests walk through the complete workflow, from accepting a dataset to downloading a report.</p>
+      <h2 data-i18n="sb.b11">Findings you can trace, and tampering you can&#x27;t hide</h2>
+      <p data-i18n="sb.b12">On a synthetic SAP dataset of 1,726 journal entries, a single run flagged 9 failed controls. One of them found 31 entries that were entered and approved by the same person, each listed with its document number.</p>
+      <figure>
+        <img src="/images/projects/strongbox/evidence.jpg" alt="Evidence for the segregation-of-duties control: every entry the same person entered and approved." data-i18n-alt="sb.b13" loading="lazy" decoding="async">
+        <figcaption data-i18n="sb.b13">Evidence for the segregation-of-duties control: every entry the same person entered and approved.</figcaption>
+      </figure>
+      <p data-i18n="sb.b14">Then the real test. I changed one amount directly in the database, bypassing the application. The next verification failed and named the exact batch that had been altered.</p>
+      <pre class="terminal">$ python -m blackbox.cli tamper-demo
+Tampered BSEG row for document 100000895 via direct SQL (amount changed, hash NOT updated)
+<span class="fail">Chain verification after tamper: fail -- Record hash mismatch in batch 20 (2000-2026-05/BSEG)</span></pre>
+      <p data-i18n="sb.b16" class="note">Strongbox is at v0.1 and runs on synthetic data. It has no customers yet, and its reports are marked test-only until it is validated with real auditors.</p>
+    </article>
+
+    <nav class="article-nav" aria-label="Projects">
+      <span></span>
+      <a href="/#work-heading" data-i18n="article.all">← All projects</a>
+      <a data-i18n="sb.nav.next" href="/projects/brazil-tax-reform.html">Next: Brazil tax reform →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="footer.copy">© 2026 Gilmar Telles</span>
+  </footer>
+
+  <script>
+    window.GT_I18N = {
+  "skip": {
+    "en": "Skip to content",
+    "pt": "Pular para o conteúdo"
+  },
+  "article.back": {
+    "en": "← Gilmar Telles",
+    "pt": "← Gilmar Telles"
+  },
+  "article.all": {
+    "en": "← All projects",
+    "pt": "← Todos os projetos"
+  },
+  "meta.role": {
+    "en": "Role",
+    "pt": "Papel"
+  },
+  "meta.when": {
+    "en": "When",
+    "pt": "Quando"
+  },
+  "meta.stack": {
+    "en": "Stack",
+    "pt": "Stack"
+  },
+  "meta.status": {
+    "en": "Status",
+    "pt": "Status"
+  },
+  "footer.copy": {
+    "en": "© 2026 Gilmar Telles",
+    "pt": "© 2026 Gilmar Telles"
+  },
+  "sb.title": {
+    "en": "Strongbox | Gilmar Telles",
+    "pt": "Strongbox | Gilmar Telles"
+  },
+  "sb.h1": {
+    "en": "Strongbox",
+    "pt": "Strongbox"
+  },
+  "sb.lede": {
+    "en": "An audit platform that checks SAP journal entries against accounting controls and proves the records it checked were never altered.",
+    "pt": "Uma plataforma de auditoria que verifica lançamentos contábeis do SAP contra controles contábeis e comprova que os registros verificados nunca foram alterados."
+  },
+  "sb.meta.1": {
+    "en": "Designed and built end to end",
+    "pt": "Concebi e construí de ponta a ponta"
+  },
+  "sb.meta.2": {
+    "en": "2026",
+    "pt": "2026"
+  },
+  "sb.meta.3": {
+    "en": "Python, Flask, PostgreSQL, React, Docker",
+    "pt": "Python, Flask, PostgreSQL, React, Docker"
+  },
+  "sb.meta.4": {
+    "en": "v0.1, validation stage",
+    "pt": "v0.1, em validação"
+  },
+  "sb.hl.1.t": {
+    "en": "Tampering is caught",
+    "pt": "Adulteração é detectada"
+  },
+  "sb.hl.1.b": {
+    "en": "Changing one amount in the database makes the next check fail and name the exact batch.",
+    "pt": "Alterar um único valor no banco faz a próxima verificação falhar e apontar o lote exato."
+  },
+  "sb.hl.2.t": {
+    "en": "Evidence to the document",
+    "pt": "Evidência até o documento"
+  },
+  "sb.hl.2.b": {
+    "en": "Every finding links to the exact journal entries behind it, ready to download.",
+    "pt": "Cada achado aponta os lançamentos exatos por trás dele, prontos para download."
+  },
+  "sb.hl.3.t": {
+    "en": "Mapped to real standards",
+    "pt": "Mapeado a normas reais"
+  },
+  "sb.hl.3.b": {
+    "en": "Controls cite SOX, PCAOB, ISA, COSO and Brazil's SPED.",
+    "pt": "Os controles citam SOX, PCAOB, ISA, COSO e o SPED brasileiro."
+  },
+  "sb.b1": {
+    "en": "Audit tests run on copies nobody can vouch for",
+    "pt": "Testes de auditoria rodam sobre cópias que ninguém consegue garantir"
+  },
+  "sb.b2": {
+    "en": "Finance teams and auditors test journal entries for the same risks every close: the same person entering and approving an entry, postings dated in the past, large manual journals hitting sensitive accounts. The usual way is to export data from the ERP into spreadsheets and filter it by hand.",
+    "pt": "Equipes financeiras e auditores testam os lançamentos contábeis contra os mesmos riscos a cada fechamento: a mesma pessoa lançando e aprovando, lançamentos com data retroativa, grandes lançamentos manuais em contas sensíveis. O caminho comum é exportar os dados do ERP para planilhas e filtrar à mão."
+  },
+  "sb.b3": {
+    "en": "Once the data leaves the ERP, nobody can prove the rows being tested are the rows that were posted. Every exception then has to be traced back to its documents by hand before anyone can act on it.",
+    "pt": "Depois que os dados saem do ERP, ninguém consegue provar que as linhas testadas são as mesmas que foram lançadas. E cada exceção precisa ser rastreada à mão até os documentos antes que alguém possa agir."
+  },
+  "sb.b4": {
+    "en": "Make every control result provable",
+    "pt": "Tornar cada resultado de controle comprovável"
+  },
+  "sb.b5": {
+    "en": "I set out to build a product that runs these controls automatically on SAP data and backs every claim it makes. The data it checked has to be provably untouched, and every exception has to point to the exact records behind it.",
+    "pt": "Meu objetivo foi construir um produto que roda esses controles automaticamente sobre dados do SAP e sustenta cada afirmação que faz. Os dados verificados precisam estar comprovadamente intactos, e cada exceção precisa apontar os registros exatos por trás dela."
+  },
+  "sb.b6": {
+    "en": "A fingerprint for every record, and evidence for every finding",
+    "pt": "Uma impressão digital para cada registro e evidência para cada achado"
+  },
+  "sb.b7.1": {
+    "en": "Every accepted record gets a SHA-256 fingerprint, and the fingerprints are linked into a chain. Verification rebuilds the whole chain, so any change, deletion or reordering shows up.",
+    "pt": "Cada registro aceito recebe uma impressão digital SHA-256, e as impressões são encadeadas. A verificação reconstrói a cadeia inteira, então qualquer alteração, exclusão ou reordenação aparece."
+  },
+  "sb.b7.2": {
+    "en": "A library of 13 controls, each mapped to the audit standards it serves, with a remediation step and downloadable evidence down to the document number.",
+    "pt": "Uma biblioteca de 13 controles, cada um mapeado às normas de auditoria que atende, com um passo de correção e evidência para download até o número do documento."
+  },
+  "sb.b7.3": {
+    "en": "Every report run is frozen with its exact inputs: dataset, control versions, settings, and the code and container that produced it. Any result can be reproduced later.",
+    "pt": "Cada execução de relatório é congelada com as entradas exatas: dataset, versões dos controles, configurações, e o código e o container que a produziram. Qualquer resultado pode ser reproduzido depois."
+  },
+  "sb.b7.4": {
+    "en": "Changes to controls and thresholds are versioned and need an independent approval before they go live, so no one can quietly loosen a check.",
+    "pt": "Mudanças em controles e limites são versionadas e precisam de aprovação independente antes de entrar em vigor, para que ninguém afrouxe uma verificação em silêncio."
+  },
+  "sb.b8": {
+    "en": "The customer workspace: the locked audit trail of hashed batches, test reports, and the chain-of-custody status.",
+    "pt": "O workspace do cliente: a trilha de auditoria travada com os lotes com hash, os relatórios de teste e o status da cadeia de custódia."
+  },
+  "sb.b9": {
+    "en": "A test report lists each failed control with the standards it maps to and the step to fix it.",
+    "pt": "Um relatório de teste lista cada controle que falhou, as normas a que se refere e o passo para corrigir."
+  },
+  "sb.b10": {
+    "en": "I built it as a full-stack product: a Python and Flask API on PostgreSQL, a React and TypeScript front end, and Docker for deployment to a cloud server. Browser tests walk through the complete workflow, from accepting a dataset to downloading a report.",
+    "pt": "Construí como um produto full-stack: uma API em Python e Flask sobre PostgreSQL, um front-end em React e TypeScript, e Docker para o deploy em um servidor na nuvem. Testes de navegador percorrem o fluxo completo, da aceitação de um dataset ao download de um relatório."
+  },
+  "sb.b11": {
+    "en": "Findings you can trace, and tampering you can't hide",
+    "pt": "Achados rastreáveis e adulterações impossíveis de esconder"
+  },
+  "sb.b12": {
+    "en": "On a synthetic SAP dataset of 1,726 journal entries, a single run flagged 9 failed controls. One of them found 31 entries that were entered and approved by the same person, each listed with its document number.",
+    "pt": "Em um dataset sintético do SAP com 1.726 lançamentos, uma única execução apontou 9 controles com falha. Um deles encontrou 31 lançamentos lançados e aprovados pela mesma pessoa, cada um listado com o número do documento."
+  },
+  "sb.b13": {
+    "en": "Evidence for the segregation-of-duties control: every entry the same person entered and approved.",
+    "pt": "Evidência do controle de segregação de funções: cada lançamento que a mesma pessoa lançou e aprovou."
+  },
+  "sb.b14": {
+    "en": "Then the real test. I changed one amount directly in the database, bypassing the application. The next verification failed and named the exact batch that had been altered.",
+    "pt": "Depois, o teste de verdade. Alterei um único valor direto no banco, por fora da aplicação. A verificação seguinte falhou e apontou o lote exato que foi alterado."
+  },
+  "sb.b16": {
+    "en": "Strongbox is at v0.1 and runs on synthetic data. It has no customers yet, and its reports are marked test-only until it is validated with real auditors.",
+    "pt": "O Strongbox está na v0.1 e roda com dados sintéticos. Ainda não tem clientes, e seus relatórios são marcados como apenas de teste até a validação com auditores reais."
+  },
+  "sb.nav.next": {
+    "en": "Next: Brazil tax reform →",
+    "pt": "Próximo: reforma tributária →"
+  }
+};
+  </script>
+  <script src="/lang.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

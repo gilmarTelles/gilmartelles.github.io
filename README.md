@@ -7,7 +7,8 @@ Personal portfolio website for Gilmar Telles, hosted on GitHub Pages.
 ## Architecture
 
 ```
-├── index.html      # The whole site: one bilingual page
+├── index.html      # Home page (bilingual)
+├── projects/       # Case-study pages (Strongbox, Brazil tax reform)
 ├── styles.css      # Light-only design system, system font stack, responsive layout
 ├── lang.js         # EN ↔ PT-BR toggle and translations, persisted via localStorage
 ├── main.js         # Minimal stub for future enhancements

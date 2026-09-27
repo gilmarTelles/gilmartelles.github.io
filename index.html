@@ -36,38 +36,60 @@
       <h2 id="timeline-heading" data-i18n="timeline.heading">timeline</h2>
       <div class="timeline">
         <article class="timeline-item">
-          <div class="time" data-i18n="timeline.1.time">2025 -</div>
+          <div class="time" data-i18n="timeline.1.time">2025 - present</div>
           <div class="dot" aria-hidden="true"></div>
           <div class="entry">
             <h3 data-i18n="timeline.1.title">Freelance Data Scientist & Data Engineer</h3>
-            <p data-i18n="timeline.1.body">Building data products for a consulting company: full-stack LLM assistants with agent tools and knowledge graphs for process intelligence, OCR and forecasting pipelines, and BI dashboards used by 1,100+ people. Also built developer tooling including a Python TUI for content migration and automated backup infrastructure.</p>
+            <ul class="entry-list">
+              <li data-i18n="timeline.1.b1">Leading the technical development of a Record to Report solution for a $17B multinational with 90,000+ employees, used by finance teams to review and reconcile trial balances during month-end close</li>
+              <li data-i18n="timeline.1.b2">Prototyping a solution for Brazil's 2026–2033 tax reform (CBS/IBS and split payment) that models tax obligations and credits end to end, reconciling to the cent against an independent calculation</li>
+              <li data-i18n="timeline.1.b3">Built Strongbox end to end (Python, Flask, PostgreSQL, React, Docker), an audit platform that checks SAP journal entries for risks such as segregation-of-duties breaches and backdated postings, and proves records were never altered using SHA-256 hash chains</li>
+            </ul>
           </div>
         </article>
 
         <article class="timeline-item">
-          <div class="time" data-i18n="timeline.2.time">2022 - present</div>
+          <div class="time" data-i18n="timeline.2.time">2025 - present</div>
           <div class="dot" aria-hidden="true"></div>
           <div class="entry">
-            <h3 data-i18n="timeline.2.title">Senior Data Analyst at ExxonMobil</h3>
-            <p data-i18n="timeline.2.body">Automated ETL workflows and trained global teams on Snowflake, Python, and Power BI. Developed a supervised learning model for payment allocation that saved 200+ hours per month, and built working-capital dashboards that contributed to a $6M improvement.</p>
+            <h3 data-i18n="timeline.2.title">Senior Data Analyst &amp; Project Manager at ExxonMobil</h3>
+            <ul class="entry-list">
+              <li data-i18n="timeline.2.b1">Leading the Upstream Accounts Receivable implementation in Celonis for thousands of users, directing a 10+ person team from a global consulting firm, expected to deliver tens of millions of dollars in working capital improvement</li>
+              <li data-i18n="timeline.2.b2">Managing the Downstream Accounts Receivable model in Celonis for 1,000+ users, from operations and new features to adoption, saving hundreds of hours of analysis and contributing to tens of millions of dollars in working capital improvement</li>
+              <li data-i18n="timeline.2.b3">Built an AI agent that drives Celonis from plain-language requests, tracing broken data loads, wrong KPIs, and failed jobs to their root cause and generating PQL, cutting troubleshooting from days to minutes for a team of 5</li>
+            </ul>
           </div>
         </article>
 
         <article class="timeline-item">
-          <div class="time" data-i18n="timeline.3.time">2025 -</div>
+          <div class="time" data-i18n="timeline.3.time">2022 - 2025</div>
           <div class="dot" aria-hidden="true"></div>
           <div class="entry">
-            <h3 data-i18n="timeline.3.title">Master's in Statistics and Data Science</h3>
-            <p data-i18n="timeline.3.body">Federal University of Paraná. Focus on statistical modeling, machine learning evaluation, and practical data systems.</p>
+            <h3 data-i18n="timeline.3.title">Data Analyst, Finance at ExxonMobil</h3>
+            <ul class="entry-list">
+              <li data-i18n="timeline.3.b1">Automated manual finance workflows with ETL pipelines, eliminating 150+ hours of work per month</li>
+              <li data-i18n="timeline.3.b2">Developed a supervised learning model that automates payment allocation, saving 200+ hours of manual work per month</li>
+              <li data-i18n="timeline.3.b3">Designed working-capital dashboards with new KPIs and forecasting for 1,100+ users across 7 teams, contributing to a $6M improvement</li>
+              <li data-i18n="timeline.3.b4">Delivered 100+ hours of Snowflake, Python, and Power BI training to global teams</li>
+            </ul>
           </div>
         </article>
 
         <article class="timeline-item">
-          <div class="time" data-i18n="timeline.4.time">2021 - 2025</div>
+          <div class="time" data-i18n="timeline.4.time">2025 - present</div>
           <div class="dot" aria-hidden="true"></div>
           <div class="entry">
-            <h3 data-i18n="timeline.4.title">Bachelor's in Mechanical Engineering</h3>
-            <p data-i18n="timeline.4.body">Federal Technological University of Paraná. Engineering background with a strong quantitative and systems-thinking foundation.</p>
+            <h3 data-i18n="timeline.4.title">Master's in Statistics and Data Science</h3>
+            <p data-i18n="timeline.4.body">Federal University of Paraná. Focus on statistical modeling, machine learning evaluation, and practical data systems.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="time" data-i18n="timeline.5.time">2017 - 2025</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div class="entry">
+            <h3 data-i18n="timeline.5.title">Bachelor's in Mechanical Engineering</h3>
+            <p data-i18n="timeline.5.body">Federal Technological University of Paraná. Engineering background with a strong quantitative and systems-thinking foundation.</p>
           </div>
         </article>
       </div>
@@ -77,34 +99,14 @@
       <h2 id="work-heading" data-i18n="work.heading">projects</h2>
       <ol class="project-list">
         <li>
-          <strong data-i18n="work.1.title">LLM Assistant for Process Intelligence</strong>
-          <span class="tag" data-i18n="work.1.meta">TypeScript · React · Fastify · Anthropic SDK · WebSocket</span>
-          <p data-i18n="work.1.body">Full-stack conversational assistant with 16 agent tools, streaming responses, a knowledge graph, and a Brazilian tax compliance module. Deployed on Docker for a consulting company.</p>
+          <strong data-i18n="work.1.title">Strongbox</strong>
+          <p data-i18n="work.1.body">An audit platform that checks SAP journal entries against accounting controls and proves the records it checked were never altered.</p>
+          <a class="project-link" href="/projects/strongbox.html" data-i18n="work.more">Read the case study →</a>
         </li>
         <li>
-          <strong data-i18n="work.2.title">Celonis AI Assistant</strong>
-          <span class="tag" data-i18n="work.2.meta">generative AI · NLP · Celonis</span>
-          <p data-i18n="work.2.body">Helps around 150 users interpret process data faster, reducing average time to generate insights by 20%.</p>
-        </li>
-        <li>
-          <strong data-i18n="work.3.title">OCR Document Pipeline</strong>
-          <span class="tag" data-i18n="work.3.meta">OCR · Azure AI · Flask · Python</span>
-          <p data-i18n="work.3.body">Transformed unstructured PDF workflows into structured spreadsheets, saving about 250 hours per month across four teams.</p>
-        </li>
-        <li>
-          <strong data-i18n="work.4.title">Working Capital Dashboards</strong>
-          <span class="tag" data-i18n="work.4.meta">Power BI · Snowflake · forecasting</span>
-          <p data-i18n="work.4.body">Dashboards used by 1,100+ users across seven teams. New KPIs and forecasting contributed to a $6M working capital improvement.</p>
-        </li>
-        <li>
-          <strong data-i18n="work.5.title">Payment Allocation Model</strong>
-          <span class="tag" data-i18n="work.5.meta">machine learning · supervised learning · finance</span>
-          <p data-i18n="work.5.body">Supervised learning model that reduced manual effort by 200+ hours per month and improved financial operation accuracy.</p>
-        </li>
-        <li>
-          <strong data-i18n="work.6.title">Celonis Migrator</strong>
-          <span class="tag" data-i18n="work.6.meta">Python · Textual · pycelonis</span>
-          <p data-i18n="work.6.body">Interactive terminal tool for migrating Celonis content (data pools, analyses, workflows, packages) between environments. Built for multi-team deployment workflows.</p>
+          <strong data-i18n="work.2.title">Brazil tax reform</strong>
+          <p data-i18n="work.2.body">A prototype that shows a CFO what Brazil's 2026–2033 tax reform will cost in cash, credits and prices, using the ledger data the company already has.</p>
+          <a class="project-link" href="/projects/brazil-tax-reform.html" data-i18n="work.more">Read the case study →</a>
         </li>
       </ol>
     </section>

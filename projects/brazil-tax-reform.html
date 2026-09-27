@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="tax.title">Brazil Tax Reform | Gilmar Telles</title>
+  <meta name="description" content="Case study: a prototype that shows a CFO what Brazil&#x27;s 2026-2033 tax reform will cost in cash, credits and prices, built on existing SAP ledger data.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Brazil Tax Reform | Gilmar Telles">
+  <meta property="og:description" content="Case study: a prototype that shows a CFO what Brazil&#x27;s 2026-2033 tax reform will cost in cash, credits and prices, built on existing SAP ledger data.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gilmartelles.com/projects/brazil-tax-reform.html">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="i18n-loading">
+  <a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+
+  <main id="main" class="article">
+    <nav class="article-top" aria-label="Site">
+      <a href="/" data-i18n="article.back">← Gilmar Telles</a>
+      <div class="profile-links">
+        <button class="lang-link active" type="button" data-lang-btn="en">en</button>
+        <button class="lang-link" type="button" data-lang-btn="pt">pt</button>
+      </div>
+    </nav>
+
+    <header>
+      <h1 data-i18n="tax.h1">Brazil tax reform</h1>
+      <p data-i18n="tax.lede" class="lede">A prototype that shows a CFO what Brazil&#x27;s 2026–2033 tax reform will cost in cash, credits and prices, using the ledger data the company already has.</p>
+      <dl class="article-meta">
+        <div><dt data-i18n="meta.role">Role</dt><dd data-i18n="tax.meta.1">Designed and built the solution</dd></div>
+        <div><dt data-i18n="meta.when">When</dt><dd data-i18n="tax.meta.2">2026</dd></div>
+        <div><dt data-i18n="meta.stack">Stack</dt><dd data-i18n="tax.meta.3">Celonis, SQL, PQL, Python</dd></div>
+        <div><dt data-i18n="meta.status">Status</dt><dd data-i18n="tax.meta.4">Prototype on synthetic data</dd></div>
+      </dl>
+      <ul class="highlights">
+        <li><strong data-i18n="tax.hl.1.t">Accurate to the cent</strong><span data-i18n="tax.hl.1.b">The deployed model matched an independent calculation for every tax type.</span></li>
+        <li><strong data-i18n="tax.hl.2.t">Built on what exists</strong><span data-i18n="tax.hl.2.b">It extends an existing ledger model instead of adding a new system.</span></li>
+        <li><strong data-i18n="tax.hl.3.t">Rules as data</strong><span data-i18n="tax.hl.3.b">Rates, transition years and credit rules live in tables, so scenarios change without code.</span></li>
+      </ul>
+    </header>
+
+    <article>
+      <h2 data-i18n="tax.b1">A new tax system, and no view of what it will cost</h2>
+      <p data-i18n="tax.b2">Brazil is replacing five consumption taxes (PIS, Cofins, IPI, ICMS and ISS) with a dual VAT, IBS and CBS, phased in from 2026 to 2033. Two changes hit cash directly. With split payment, the tax is taken out at the moment the customer pays, so the company loses the money it used to hold until the tax was due. And a company only earns credit on its purchases once the supplier&#x27;s tax has actually been paid.</p>
+      <p data-i18n="tax.b3">Finance leaders have to decide prices and contracts before the final rates are even published, and their ERP cannot show them the size of the impact.</p>
+      <h2 data-i18n="tax.b4">Turn existing ledger data into tax decisions</h2>
+      <p data-i18n="tax.b5">The goal was to read the tax already recorded in the SAP ledger and turn it into answers a CFO can act on: the effective rate today against the reform, which costs will earn credit, how much float split payment takes away, and what that means for prices. It had to reuse the data and model the company already had, not start a new system.</p>
+      <h2 data-i18n="tax.b6">Extend the ledger model and encode the law as data</h2>
+      <ul class="points">
+        <li data-i18n="tax.b7.1">Extended an existing trial-balance model with four new objects for tax lines, rates, scenarios and obligations, instead of building a parallel one. Only four extra SAP columns were needed.</li>
+        <li data-i18n="tax.b7.2">Encoded the reform&#x27;s rules as parameter tables: the 2026–2033 transition, state and interstate rates, and credit rules. Switching a scenario recalculates everything without touching code.</li>
+        <li data-i18n="tax.b7.3">Built a synthetic SAP dataset for three Brazilian companies over 24 months, with electronic invoices, plus a validator, so the model could be tested end to end before touching client data.</li>
+        <li data-i18n="tax.b7.4">Designed the views a CFO uses: a cockpit, a month-by-month cash simulation of today&#x27;s tax against the reform, a credit map, and a split-payment radar.</li>
+      </ul>
+      <figure>
+        <img src="/images/projects/brazil-tax-reform/model.jpg" alt="The data model: the four tax objects (green) plug into the existing trial-balance model." data-i18n-alt="tax.b8" loading="lazy" decoding="async">
+        <figcaption data-i18n="tax.b8">The data model: the four tax objects (green) plug into the existing trial-balance model.</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/projects/brazil-tax-reform/cash-simulation.jpg" alt="Cash simulation: today&#x27;s tax (bars) against the projected IBS and CBS (line), month by month. Synthetic data." data-i18n-alt="tax.b9" loading="lazy" decoding="async">
+        <figcaption data-i18n="tax.b9">Cash simulation: today&#x27;s tax (bars) against the projected IBS and CBS (line), month by month. Synthetic data.</figcaption>
+      </figure>
+      <h2 data-i18n="tax.b10">A working prototype that matches an independent calculation</h2>
+      <p data-i18n="tax.b11">Deployed to a sandbox environment, the model produced the same totals as an independent offline calculation, tax type by tax type and cent by cent. The views and KPIs passed platform validation with zero errors, and I checked the legal claims behind the rules against their sources.</p>
+      <figure>
+        <img src="/images/projects/brazil-tax-reform/cockpit.jpg" alt="The cockpit: net receipt after the split, current against projected tax, and the delta. Synthetic data." data-i18n-alt="tax.b12" loading="lazy" decoding="async">
+        <figcaption data-i18n="tax.b12">The cockpit: net receipt after the split, current against projected tax, and the delta. Synthetic data.</figcaption>
+      </figure>
+      <p data-i18n="tax.b13" class="note">This is a prototype running on synthetic data. The next phases are refunds, tax classification of real items, and a rollout on real company data.</p>
+    </article>
+
+    <nav class="article-nav" aria-label="Projects">
+      <a data-i18n="tax.nav.prev" href="/projects/strongbox.html">← Previous: Strongbox</a>
+      <a href="/#work-heading" data-i18n="article.all">← All projects</a>
+      <span></span>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="footer.copy">© 2026 Gilmar Telles</span>
+  </footer>
+
+  <script>
+    window.GT_I18N = {
+  "skip": {
+    "en": "Skip to content",
+    "pt": "Pular para o conteúdo"
+  },
+  "article.back": {
+    "en": "← Gilmar Telles",
+    "pt": "← Gilmar Telles"
+  },
+  "article.all": {
+    "en": "← All projects",
+    "pt": "← Todos os projetos"
+  },
+  "meta.role": {
+    "en": "Role",
+    "pt": "Papel"
+  },
+  "meta.when": {
+    "en": "When",
+    "pt": "Quando"
+  },
+  "meta.stack": {
+    "en": "Stack",
+    "pt": "Stack"
+  },
+  "meta.status": {
+    "en": "Status",
+    "pt": "Status"
+  },
+  "footer.copy": {
+    "en": "© 2026 Gilmar Telles",
+    "pt": "© 2026 Gilmar Telles"
+  },
+  "tax.title": {
+    "en": "Brazil Tax Reform | Gilmar Telles",
+    "pt": "Reforma Tributária | Gilmar Telles"
+  },
+  "tax.h1": {
+    "en": "Brazil tax reform",
+    "pt": "Reforma tributária brasileira"
+  },
+  "tax.lede": {
+    "en": "A prototype that shows a CFO what Brazil's 2026–2033 tax reform will cost in cash, credits and prices, using the ledger data the company already has.",
+    "pt": "Um protótipo que mostra ao CFO quanto a reforma tributária de 2026–2033 vai custar em caixa, créditos e preços, usando os dados contábeis que a empresa já tem."
+  },
+  "tax.meta.1": {
+    "en": "Designed and built the solution",
+    "pt": "Concebi e construí a solução"
+  },
+  "tax.meta.2": {
+    "en": "2026",
+    "pt": "2026"
+  },
+  "tax.meta.3": {
+    "en": "Celonis, SQL, PQL, Python",
+    "pt": "Celonis, SQL, PQL, Python"
+  },
+  "tax.meta.4": {
+    "en": "Prototype on synthetic data",
+    "pt": "Protótipo com dados sintéticos"
+  },
+  "tax.hl.1.t": {
+    "en": "Accurate to the cent",
+    "pt": "Exato até o centavo"
+  },
+  "tax.hl.1.b": {
+    "en": "The deployed model matched an independent calculation for every tax type.",
+    "pt": "O modelo publicado bateu com um cálculo independente em cada tipo de tributo."
+  },
+  "tax.hl.2.t": {
+    "en": "Built on what exists",
+    "pt": "Construído sobre o que existe"
+  },
+  "tax.hl.2.b": {
+    "en": "It extends an existing ledger model instead of adding a new system.",
+    "pt": "Estende um modelo contábil existente em vez de criar um sistema novo."
+  },
+  "tax.hl.3.t": {
+    "en": "Rules as data",
+    "pt": "Regras como dados"
+  },
+  "tax.hl.3.b": {
+    "en": "Rates, transition years and credit rules live in tables, so scenarios change without code.",
+    "pt": "Alíquotas, anos de transição e regras de crédito ficam em tabelas, então os cenários mudam sem código."
+  },
+  "tax.b1": {
+    "en": "A new tax system, and no view of what it will cost",
+    "pt": "Um novo sistema tributário, sem visão do quanto vai custar"
+  },
+  "tax.b2": {
+    "en": "Brazil is replacing five consumption taxes (PIS, Cofins, IPI, ICMS and ISS) with a dual VAT, IBS and CBS, phased in from 2026 to 2033. Two changes hit cash directly. With split payment, the tax is taken out at the moment the customer pays, so the company loses the money it used to hold until the tax was due. And a company only earns credit on its purchases once the supplier's tax has actually been paid.",
+    "pt": "O Brasil está substituindo cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por um IVA dual, IBS e CBS, com transição de 2026 a 2033. Duas mudanças atingem o caixa diretamente. Com o split payment, o imposto é retido no momento em que o cliente paga, e a empresa perde o dinheiro que mantinha até o vencimento do tributo. E a empresa só ganha crédito nas compras quando o imposto do fornecedor é efetivamente pago."
+  },
+  "tax.b3": {
+    "en": "Finance leaders have to decide prices and contracts before the final rates are even published, and their ERP cannot show them the size of the impact.",
+    "pt": "Os gestores financeiros precisam decidir preços e contratos antes mesmo de as alíquotas finais serem publicadas, e o ERP não mostra o tamanho do impacto."
+  },
+  "tax.b4": {
+    "en": "Turn existing ledger data into tax decisions",
+    "pt": "Transformar os dados contábeis existentes em decisões tributárias"
+  },
+  "tax.b5": {
+    "en": "The goal was to read the tax already recorded in the SAP ledger and turn it into answers a CFO can act on: the effective rate today against the reform, which costs will earn credit, how much float split payment takes away, and what that means for prices. It had to reuse the data and model the company already had, not start a new system.",
+    "pt": "O objetivo foi ler o imposto já registrado no razão do SAP e transformá-lo em respostas que o CFO pode usar: a alíquota efetiva hoje contra a reforma, quais custos vão gerar crédito, quanto float o split payment tira, e o que isso significa para os preços. Precisava reaproveitar os dados e o modelo que a empresa já tinha, sem criar um sistema novo."
+  },
+  "tax.b6": {
+    "en": "Extend the ledger model and encode the law as data",
+    "pt": "Estender o modelo contábil e codificar a lei como dados"
+  },
+  "tax.b7.1": {
+    "en": "Extended an existing trial-balance model with four new objects for tax lines, rates, scenarios and obligations, instead of building a parallel one. Only four extra SAP columns were needed.",
+    "pt": "Estendi um modelo de balancete existente com quatro novos objetos para linhas de imposto, alíquotas, cenários e obrigações, em vez de construir um modelo paralelo. Foram necessárias apenas quatro colunas extras do SAP."
+  },
+  "tax.b7.2": {
+    "en": "Encoded the reform's rules as parameter tables: the 2026–2033 transition, state and interstate rates, and credit rules. Switching a scenario recalculates everything without touching code.",
+    "pt": "Codifiquei as regras da reforma como tabelas de parâmetros: a transição de 2026–2033, alíquotas estaduais e interestaduais, e regras de crédito. Trocar de cenário recalcula tudo sem mexer em código."
+  },
+  "tax.b7.3": {
+    "en": "Built a synthetic SAP dataset for three Brazilian companies over 24 months, with electronic invoices, plus a validator, so the model could be tested end to end before touching client data.",
+    "pt": "Construí um dataset sintético do SAP para três empresas brasileiras ao longo de 24 meses, com notas fiscais eletrônicas, além de um validador, para testar o modelo de ponta a ponta antes de usar dados do cliente."
+  },
+  "tax.b7.4": {
+    "en": "Designed the views a CFO uses: a cockpit, a month-by-month cash simulation of today's tax against the reform, a credit map, and a split-payment radar.",
+    "pt": "Desenhei as visões que o CFO usa: um cockpit, uma simulação mensal de caixa do imposto de hoje contra a reforma, um mapa de créditos e um radar de split payment."
+  },
+  "tax.b8": {
+    "en": "The data model: the four tax objects (green) plug into the existing trial-balance model.",
+    "pt": "O modelo de dados: os quatro objetos tributários (em verde) se conectam ao modelo de balancete existente."
+  },
+  "tax.b9": {
+    "en": "Cash simulation: today's tax (bars) against the projected IBS and CBS (line), month by month. Synthetic data.",
+    "pt": "Simulação de caixa: o imposto de hoje (barras) contra o IBS e a CBS projetados (linha), mês a mês. Dados sintéticos."
+  },
+  "tax.b10": {
+    "en": "A working prototype that matches an independent calculation",
+    "pt": "Um protótipo funcional que bate com um cálculo independente"
+  },
+  "tax.b11": {
+    "en": "Deployed to a sandbox environment, the model produced the same totals as an independent offline calculation, tax type by tax type and cent by cent. The views and KPIs passed platform validation with zero errors, and I checked the legal claims behind the rules against their sources.",
+    "pt": "Publicado em um ambiente sandbox, o modelo produziu os mesmos totais de um cálculo offline independente, tributo por tributo e centavo por centavo. As visões e os KPIs passaram na validação da plataforma sem nenhum erro, e conferi as afirmações legais por trás das regras contra as fontes."
+  },
+  "tax.b12": {
+    "en": "The cockpit: net receipt after the split, current against projected tax, and the delta. Synthetic data.",
+    "pt": "O cockpit: receita líquida após o split, imposto atual contra o projetado, e a diferença. Dados sintéticos."
+  },
+  "tax.b13": {
+    "en": "This is a prototype running on synthetic data. The next phases are refunds, tax classification of real items, and a rollout on real company data.",
+    "pt": "Este é um protótipo rodando com dados sintéticos. As próximas fases são ressarcimento, classificação tributária de itens reais e a implantação com dados reais da empresa."
+  },
+  "tax.nav.prev": {
+    "en": "← Previous: Strongbox",
+    "pt": "← Anterior: Strongbox"
+  }
+};
+  </script>
+  <script src="/lang.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
